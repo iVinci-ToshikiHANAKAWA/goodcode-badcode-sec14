@@ -1,9 +1,9 @@
-package chapter14_refactoring.delivery.v4;
+package chapter14_refactoring.delivery.v5;
 
 class DeliveryCharge {
   final int amount;
 
   DeliveryCharge(final ShoppingCart shoppingCart) {
-    amount = DeliveryManager.deliveryCharge(shoppingCart.products);
+    amount = DeliveryManager.deliveryCharge(shoppingCart);
   }
 }

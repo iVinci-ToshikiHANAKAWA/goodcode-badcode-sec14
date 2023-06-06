@@ -1,11 +1,11 @@
-package chapter14_refactoring.delivery.v3;
+package chapter14_refactoring.delivery.v5;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // 買い物かご
 class ShoppingCart {
-  final List<Product> products;
+  private final List<Product> products;
 
   ShoppingCart() {
     products = new ArrayList<Product>();
@@ -19,5 +19,16 @@ class ShoppingCart {
     final List<Product> adding = new ArrayList<>(products);
     adding.add(product);
     return new ShoppingCart(adding);
+  }
+
+  /**
+   * @return 商品の合計金額
+   */
+  int totalPrice() {
+    int amount = 0;
+    for (Product each : products) {
+      amount += each.price;
+    }
+    return amount;
   }
 }
